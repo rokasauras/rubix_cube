@@ -13,7 +13,7 @@ class rubix_cube(): #initilises a class for the solved state of the rubix cube
 
     def create_solved_state(self): 
         solved_state = np.empty((6, 3, 3), dtype=str) #creates an empty array 
-        colours = ['R', 'G', 'B', 'Y', 'W', 'O'] #colours of each cube face
+        colours = ['R', 'G', 'O', 'B', 'Y', 'W'] #colours of each cube face
         for i, colour in enumerate(colours): #loop that fills in each face with a colour
             solved_state[i] = np.full((3,3), colour)
         return solved_state #returns the solved faces of the rubix cube
@@ -27,84 +27,84 @@ class rubix_cube(): #initilises a class for the solved state of the rubix cube
         self.rotate_adjacent_faces(face, clockwise=False)
 
     def rotate_adjacent_faces(self, face, clockwise=True):
-        if face == 0:  # Front face
-            if clockwise:
-                temp = self.state[1][2, :].copy()
-                self.state[1][2, :] = self.state[5][2, :]
-                self.state[5][2, :] = self.state[3][0, ::-1]
-                self.state[3][0, :] = self.state[4][2, ::-1]
-                self.state[4][2, :] = temp
-            else:
-                temp = self.state[1][2, :].copy()
-                self.state[1][2, :] = self.state[4][2, :]
-                self.state[4][2, :] = self.state[3][0, ::-1]
-                self.state[3][0, :] = self.state[5][2, ::-1]
-                self.state[5][2, :] = temp
-        elif face == 1:  # Top face
-            if clockwise:
-                temp = self.state[0][0, :].copy()
-                self.state[0][0, :] = self.state[4][0, :]
-                self.state[4][0, :] = self.state[2][0, :]
-                self.state[2][0, :] = self.state[5][0, :]
-                self.state[5][0, :] = temp
-            else:
-                temp = self.state[0][0, :].copy()
-                self.state[0][0, :] = self.state[5][0, :]
-                self.state[5][0, :] = self.state[2][0, :]
-                self.state[2][0, :] = self.state[4][0, :]
-                self.state[4][0, :] = temp
-        elif face == 2:  # Back face
-            if clockwise:
-                temp = self.state[1][0, :].copy()
-                self.state[1][0, :] = self.state[4][0, ::-1]
-                self.state[4][0, :] = self.state[3][2, :]
-                self.state[3][2, :] = self.state[5][0, ::-1]
-                self.state[5][0, :] = temp
-            else:
-                temp = self.state[1][0, :].copy()
-                self.state[1][0, :] = self.state[5][0, :]
-                self.state[5][0, :] = self.state[3][2, ::-1]
-                self.state[3][2, :] = self.state[4][0, :]
-                self.state[4][0, :] = temp
-        elif face == 3:  # Bottom face
-            if clockwise:
-                temp = self.state[0][2, :].copy()
-                self.state[0][2, :] = self.state[5][2, :]
-                self.state[5][2, :] = self.state[2][2, :]
-                self.state[2][2, :] = self.state[4][2, :]
-                self.state[4][2, :] = temp
-            else:
-                temp = self.state[0][2, :].copy()
-                self.state[0][2, :] = self.state[4][2, :]
-                self.state[4][2, :] = self.state[2][2, :]
-                self.state[2][2, :] = self.state[5][2, :]
-                self.state[5][2, :] = temp
-        elif face == 4:  # Left face
-            if clockwise:
-                temp = self.state[0][:, 0].copy()
-                self.state[0][:, 0] = self.state[3][:, 0]
-                self.state[3][:, 0] = self.state[2][:, 0]
-                self.state[2][:, 0] = self.state[1][:, 0]
-                self.state[1][:, 0] = temp
-            else:
-                temp = self.state[0][:, 0].copy()
-                self.state[0][:, 0] = self.state[1][:, 0]
-                self.state[1][:, 0] = self.state[2][:, 0]
-                self.state[2][:, 0] = self.state[3][:, 0]
-                self.state[3][:, 0] = temp
-        elif face == 5:  # Right face
-            if clockwise:
-                temp = self.state[0][:, 2].copy()
-                self.state[0][:, 2] = self.state[1][:, 2]
-                self.state[1][:, 2] = self.state[2][:, 2]
-                self.state[2][:, 2] = self.state[3][:, 2]
-                self.state[3][:, 2] = temp
-            else:
-                temp = self.state[0][:, 2].copy()
-                self.state[0][:, 2] = self.state[3][:, 2]
-                self.state[3][:, 2] = self.state[2][:, 2]
-                self.state[2][:, 2] = self.state[1][:, 2]
-                self.state[1][:, 2] = temp
+            if face == 0:  # Front face
+                if clockwise:
+                    temp = self.state[1][2, :].copy()
+                    self.state[1][2, :] = self.state[4][2, ::-1]
+                    self.state[4][2, :] = self.state[3][0, ::-1]
+                    self.state[3][0, :] = self.state[5][2, :]
+                    self.state[5][2, :] = temp
+                else:
+                    temp = self.state[1][2, :].copy()
+                    self.state[1][2, :] = self.state[5][2, :]
+                    self.state[5][2, :] = self.state[3][0, ::-1]
+                    self.state[3][0, :] = self.state[4][2, ::-1]
+                    self.state[4][2, :] = temp
+            elif face == 1:  # Top face
+                if clockwise:
+                    temp = self.state[0][0, :].copy()
+                    self.state[0][0, :] = self.state[4][0, :]
+                    self.state[4][0, :] = self.state[2][0, :]
+                    self.state[2][0, :] = self.state[5][0, :]
+                    self.state[5][0, :] = temp
+                else:
+                    temp = self.state[0][0, :].copy()
+                    self.state[0][0, :] = self.state[5][0, :]
+                    self.state[5][0, :] = self.state[2][0, :]
+                    self.state[2][0, :] = self.state[4][0, :]
+                    self.state[4][0, :] = temp
+            elif face == 2:  # Back face
+                if clockwise:
+                    temp = self.state[1][0, :].copy()
+                    self.state[1][0, :] = self.state[5][0, ::-1]
+                    self.state[5][0, :] = self.state[3][2, ::-1]
+                    self.state[3][2, :] = self.state[4][0, :]
+                    self.state[4][0, :] = temp
+                else:
+                    temp = self.state[1][0, :].copy()
+                    self.state[1][0, :] = self.state[4][0, :]
+                    self.state[4][0, :] = self.state[3][2, ::-1]
+                    self.state[3][2, :] = self.state[5][0, ::-1]
+                    self.state[5][0, :] = temp
+            elif face == 3:  # Bottom face
+                if clockwise:
+                    temp = self.state[0][2, :].copy()
+                    self.state[0][2, :] = self.state[5][2, :]
+                    self.state[5][2, :] = self.state[2][2, :]
+                    self.state[2][2, :] = self.state[4][2, :]
+                    self.state[4][2, :] = temp
+                else:
+                    temp = self.state[0][2, :].copy()
+                    self.state[0][2, :] = self.state[4][2, :]
+                    self.state[4][2, :] = self.state[2][2, :]
+                    self.state[2][2, :] = self.state[5][2, :]
+                    self.state[5][2, :] = temp
+            elif face == 4:  # Left face
+                if clockwise:
+                    temp = self.state[0][:, 0].copy()
+                    self.state[0][:, 0] = self.state[3][:, 0]
+                    self.state[3][:, 0] = self.state[2][:, 0]
+                    self.state[2][:, 0] = self.state[1][:, 0]
+                    self.state[1][:, 0] = temp
+                else:
+                    temp = self.state[0][:, 0].copy()
+                    self.state[0][:, 0] = self.state[1][:, 0]
+                    self.state[1][:, 0] = self.state[2][:, 0]
+                    self.state[2][:, 0] = self.state[3][:, 0]
+                    self.state[3][:, 0] = temp
+            elif face == 5:  # Right face
+                if clockwise:
+                    temp = self.state[0][:, 2].copy()
+                    self.state[0][:, 2] = self.state[1][:, 2]
+                    self.state[1][:, 2] = self.state[2][:, 2]
+                    self.state[2][:, 2] = self.state[3][:, 2]
+                    self.state[3][:, 2] = temp
+                else:
+                    temp = self.state[0][:, 2].copy()
+                    self.state[0][:, 2] = self.state[3][:, 2]
+                    self.state[3][:, 2] = self.state[2][:, 2]
+                    self.state[2][:, 2] = self.state[1][:, 2]
+                    self.state[1][:, 2] = temp
 
 
     def print_state(self):
@@ -120,6 +120,9 @@ cube.rotate_face_clockwise(0)
 
 print("\nState after Movements:")
 cube.print_state() #prints final state after movements
+
+#All output face orientations are toward or facing, face 0 which is red.
+
 
 
 
