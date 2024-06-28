@@ -22,8 +22,8 @@
         <li>Creating detailed solution instructions with arrows.</li>
     </ul>
 
-<h2>Installation</h2>
-    <p>To use this project, ensure you have Python installed along with the NumPy library. You can install NumPy using pip:</p>
-    <pre><code>pip install numpy</code></pre>
+   <h2>Installation</h2>
+        <p>To use this project, ensure you have Python installed along with the NumPy library. You can install NumPy using pip:</p>
+        <pre><code>pip install numpy</code></pre>
 </body>
 </html>
