@@ -13,13 +13,14 @@
         <li>Initializes a Rubik's Cube in its solved state.</li>
         <li>Supports clockwise and counterclockwise rotations for each face.</li>
         <li>Updates adjacent faces correctly after each rotation.</li>
-        <li>Prints the current state of the cube for visualization.</li>
+        <li>Prints the current state of the cube for visualisation.</li>
     </ul>
     
   <h2>Future Enhancements</h2>
     <ul>
         <li>Implementing a camera-based detection system to automatically input the unsolved cube's state.</li>
         <li>Creating detailed solution instructions with arrows.</li>
+        <li>Compact the code, so it generates matrices, instead of changing premade ones. Easier to visualise.</li>
     </ul>
 
    <h2>Installation</h2>
