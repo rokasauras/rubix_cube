@@ -1,13 +1,13 @@
 '''
-This will be a rubix cube solver, that will use algorithms to find the fastest possible way,
-of solving a rubix cube. I will have to manually enter the data but in future I could use a camera,
+This will be a rubiks cube solver, that will use algorithms to find the fastest possible way,
+of solving a rubiks cube. I will have to manually enter the data but in future I could use a camera,
 and detect the unsolved cube. To show the solution I may create written instructions with arrows,
 based on the solutions.
 '''
 
 import numpy as np
 
-class rubix_cube(): #initilises a class for the solved state of the rubix cube
+class rubiks_cube(): #initilises a class for the solved state of the rubiks cube
     def __init__(self):
         self.state = self.create_solved_state() 
 
@@ -16,7 +16,7 @@ class rubix_cube(): #initilises a class for the solved state of the rubix cube
         colours = ['R', 'G', 'O', 'B', 'Y', 'W'] #colours of each cube face
         for i, colour in enumerate(colours): #loop that fills in each face with a colour
             solved_state[i] = np.full((3,3), colour)
-        return solved_state #returns the solved faces of the rubix cube
+        return solved_state #returns the solved faces of the rubiks cube
     
     def rotate_face_clockwise(self, face):
         self.state[face] = np.rot90(self.state[face], -1) #specifies which face to rotate in the 3D array by 90 degrees
@@ -112,7 +112,7 @@ class rubix_cube(): #initilises a class for the solved state of the rubix cube
             print(f"Face {i}:")
             print(face)
     
-cube = rubix_cube()
+cube = rubiks_cube()
 print("Initial State:")
 cube.print_state() #should print out all faces
 
