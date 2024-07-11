@@ -10,7 +10,7 @@
     
   <h2>Features</h2>
     <ul>
-        <li>Initializes a Rubik's Cube in its solved state.</li>
+        <li>Initialises a Rubik's Cube in its solved state.</li>
         <li>Supports clockwise and counterclockwise rotations for each face.</li>
         <li>Updates adjacent faces correctly after each rotation.</li>
         <li>Prints the current state of the cube for visualisation.</li>
