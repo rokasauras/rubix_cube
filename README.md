@@ -23,7 +23,7 @@
     </ul>
 
    <h2>Installation</h2>
-        <p>To use this project, ensure you have Python installed along with the NumPy library. You can install NumPy using pip:</p>
+        <p>To use this project, ensure you have Python installed along with the NumPy library. </p>
         <pre><code>pip install numpy</code></pre>
 </body>
 </html>
